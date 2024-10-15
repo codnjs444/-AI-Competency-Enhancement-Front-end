@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lecture/binding/page_binding.dart';
+import 'package:lecture/views/lecture_main.dart';
 
 class Routes extends GetMiddleware {
 
