@@ -38,7 +38,7 @@ class LectureWidget extends GetView<LectureWidgetController> {
                     const Color(0xff96B0E5), // 버튼 배경 색상 적용
                   ),
                 ),
-                child: const Text('카운트 증가 시키자'),
+                child: const Text('카운트 증가'),
               ),
             ),
             const SizedBox(height: 20),
