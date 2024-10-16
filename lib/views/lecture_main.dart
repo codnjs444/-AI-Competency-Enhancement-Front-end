@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lecture/controller/lecture_main_controller.dart';
+import 'package:lecture/controller/lecture_camera_controller.dart'; // 카메라 컨트롤러 추가
+import 'package:lecture/views/lecture_camera.dart'; // LectureCamera 추가
 
 class LectureMain extends GetView<LectureMainController> {
   LectureMain({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // 카메라 컨트롤러 등록
+    Get.put(LectureCameraController());
+
     return GetBuilder<LectureMainController>(
       init: controller,
       builder: (_) {
@@ -21,20 +26,18 @@ class LectureMain extends GetView<LectureMainController> {
               },
             ),
             title: const Text(
-              '당근 마켓 스타일',
+              '당근',
               style: TextStyle(color: Colors.black, fontSize: 20),
             ),
             centerTitle: true,
           ),
-          backgroundColor: const Color(0xfff2f2f2), // 당근 마켓 스타일의 배경색
+          backgroundColor: const Color(0xfff2f2f2),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center, // 세로 방향으로 중앙 배치
+              crossAxisAlignment: CrossAxisAlignment.center, // 가로 방향으로 중앙 배치
               children: [
-                const SizedBox(height: 20),
-
                 // 상단에 당근 캐릭터 이미지
                 Image.asset(
                   'assets/images/carrot_character.png', // 당근 마켓 캐릭터 이미지
@@ -87,6 +90,7 @@ class LectureMain extends GetView<LectureMainController> {
                   child: ElevatedButton(
                     onPressed: () {
                       // 인스타 버튼 클릭 이벤트
+                      Get.toNamed('/lecture_insta');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orangeAccent,
@@ -102,7 +106,33 @@ class LectureMain extends GetView<LectureMainController> {
                   ),
                 ),
 
-                const SizedBox(height: 40), // 하단 간격
+                const SizedBox(height: 20), // 버튼 간격 추가
+
+                // 카메라 버튼
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // 카메라 버튼 클릭 이벤트
+                      print('늘림');
+                      Get.toNamed('/lecture_camera');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orangeAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: const Text(
+                      '카메라',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 20),
 
                 // 하단에 당근 로고 이미지
                 Image.asset(

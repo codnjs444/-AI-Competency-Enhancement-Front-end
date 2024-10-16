@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lecture/common/routes.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:lecture/controller/lecture_camera_controller.dart';
+
 
 void main() async {
-
   //초기화 보장
   WidgetsFlutterBinding.ensureInitialized();
 

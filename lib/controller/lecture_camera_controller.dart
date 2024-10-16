@@ -1,16 +1,18 @@
-import 'package:get/get.dart';
 import 'package:camera/camera.dart';
+import 'package:get/get.dart';
 
-class LectureMainController extends GetxController {
-  LectureMainController get to => Get.find();
+class LectureCameraController extends GetxController {
+  LectureCameraController get to => Get.find();
 
   late List<CameraDescription> cameras;
   late CameraController camerasController;
   bool cameraInitChk = false; //카메라 초기화 체크
 
- @override
+  @override
   void onInit() async{
-   initCamera();
+    //딱 한번만 페이지 들어 올때 실행 합니다.
+    print('카메라 화면 출력');
+    initCamera();
     super.onInit();
   }
 
@@ -24,5 +26,6 @@ class LectureMainController extends GetxController {
       update();//화면에 값을 전달
     });
   }
+
 
 }

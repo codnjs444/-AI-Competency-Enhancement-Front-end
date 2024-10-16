@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:lecture/binding/page_binding.dart';
 import 'package:lecture/views/lecture_main.dart';
 import 'package:lecture/views/lecture_widget.dart';
+import 'package:lecture/views/lecture_camera.dart';
+import 'package:lecture/views/lecture_insta.dart';
 
 class Routes extends GetMiddleware {
 
@@ -57,7 +59,23 @@ class Routes extends GetMiddleware {
       middlewares: [Routes()],
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 200),
-    )
+    ),
+    GetPage(
+      name: '/lecture_camera',
+      page: () => LectureCamera(),
+      binding: PageBinding(),
+      middlewares: [Routes()],
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 200),
+    ),
+    GetPage(
+      name: '/lecture_insta',
+      page: () => LectureInsta(),
+      binding: PageBinding(),
+      middlewares: [Routes()],
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 200),
+    ),
   ];
 }
 
