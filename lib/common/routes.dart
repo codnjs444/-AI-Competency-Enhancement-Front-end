@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lecture/binding/page_binding.dart';
 import 'package:lecture/views/lecture_main.dart';
+import 'package:lecture/views/lecture_widget.dart';
 
 class Routes extends GetMiddleware {
 
@@ -48,16 +49,15 @@ class Routes extends GetMiddleware {
       middlewares: [Routes()],
       transition: Transition.rightToLeftWithFade,
       transitionDuration: const Duration(milliseconds: 200),
-    )
-    /* ,
+    ),
     GetPage(
-      name: '/lecture_test',
-      page: () => LectureTest(),
+      name: '/lecture_widget',
+      page: () => LectureWidget(),
       binding: PageBinding(),
       middlewares: [Routes()],
-      transition: Transition.rightToLeftWithFade,
+      transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 200),
-    ),*/
+    )
   ];
 }
 

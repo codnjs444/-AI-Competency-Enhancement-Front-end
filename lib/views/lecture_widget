@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lecture/controller/lecture_main_controller.dart';
+
+class LectureWidget extends GetView<LectureMainController> {
+  LectureWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    print('Main 화면');
+    return GetBuilder<LectureMainController>(
+        init: controller,
+        builder: (_) {
+          return Scaffold(
+              appBar: AppBar(
+                backgroundColor: Colors.transparent,
+              ),
+              backgroundColor: Colors.white,
+              extendBodyBehindAppBar: true, //body 위에 Appbar 올리기
+              body: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/img.png'),
+                        fit: BoxFit.fill
+                    )
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('스마트시티 교통\n인공지능 솔루션', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
+                    const SizedBox(height: 100),
+                    SizedBox(
+                      width: 300,
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {
+                        },
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(const Color(0xff96B0E5)),
+                          foregroundColor: WidgetStateProperty.all(const Color(0xfff4ebe7)),
+                          overlayColor: WidgetStateProperty.all(Colors.transparent),
+                          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                              )
+                          ),
+                        ),
+                        child: const Text('Widget', style: TextStyle(fontSize: 20)),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    SizedBox(
+                      width: 300,
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {
+                          print('인스타');
+                          Get.toNamed('/lecture_widget');
+                        },
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(const Color(0xff96B0E5)),
+                          foregroundColor: WidgetStateProperty.all(const Color(0xfff4ebe7)),
+                          overlayColor: WidgetStateProperty.all(Colors.transparent),
+                          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                              )
+                          ),
+                        ),
+                        child: const Text('인스타', style: TextStyle(fontSize: 20)),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
+              )
+          );
+        }
+    );
+  }
+}
