@@ -115,7 +115,7 @@ class LectureMain extends GetView<LectureMainController> {
                   child: ElevatedButton(
                     onPressed: () {
                       // 카메라 버튼 클릭 이벤트
-                      print('늘림');
+                      print('늘림 lecture_camera');
                       Get.toNamed('/lecture_camera');
                     },
                     style: ElevatedButton.styleFrom(

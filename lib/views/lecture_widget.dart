@@ -86,13 +86,13 @@ class LectureWidget extends GetView<LectureWidgetController> {
                       child: Image.asset('assets/images/carrot_character.png'),
                     ),
                     const SizedBox(height: 20),
-                    Container(
-                      width: 200,
-                      height: 400,
-                      child: controller.cameraInitChk == true
-                          ? CameraPreview(controller.camerasController)
-                          : SizedBox.shrink(),
-                    )
+                    // Container(
+                    //   width: 200,
+                    //   height: 400,
+                    //   child: controller.cameraInitChk == true
+                    //       ? CameraPreview(controller.camerasController)
+                    //       : SizedBox.shrink(),
+                    // )
                   ],
                 ),
               )

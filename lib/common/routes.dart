@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lecture/binding/page_binding.dart';
-import 'package:lecture/views/lecture_main.dart';
-import 'package:lecture/views/lecture_widget.dart';
+// import 'package:lecture/views/lecture_ai.dart';
 import 'package:lecture/views/lecture_camera.dart';
+// import 'package:lecture/views/lecture_learning.dart';
+import 'package:lecture/views/lecture_main.dart';
+// import 'package:lecture/views/lecture_test.dart';
+// import 'package:lecture/views/lecture_ui.dart';
+// import 'package:lecture/views/lecture_ui_create.dart';
+import 'package:lecture/views/lecture_widget.dart';
 import 'package:lecture/views/lecture_insta.dart';
+// import 'package:lecture/views/lecture_widget_org.dart';
 
 class Routes extends GetMiddleware {
 
@@ -57,15 +63,7 @@ class Routes extends GetMiddleware {
       page: () => LectureWidget(),
       binding: PageBinding(),
       middlewares: [Routes()],
-      transition: Transition.fadeIn,
-      transitionDuration: const Duration(milliseconds: 200),
-    ),
-    GetPage(
-      name: '/lecture_camera',
-      page: () => LectureCamera(),
-      binding: PageBinding(),
-      middlewares: [Routes()],
-      transition: Transition.fadeIn,
+      transition: Transition.rightToLeftWithFade,
       transitionDuration: const Duration(milliseconds: 200),
     ),
     GetPage(
@@ -73,7 +71,15 @@ class Routes extends GetMiddleware {
       page: () => LectureInsta(),
       binding: PageBinding(),
       middlewares: [Routes()],
-      transition: Transition.fadeIn,
+      transition: Transition.rightToLeftWithFade,
+      transitionDuration: const Duration(milliseconds: 200),
+    ),
+    GetPage(
+      name: '/lecture_camera',
+      page: () => LectureCamera(),
+      binding: PageBinding(),
+      middlewares: [Routes()],
+      transition: Transition.rightToLeftWithFade,
       transitionDuration: const Duration(milliseconds: 200),
     ),
   ];
