@@ -70,6 +70,14 @@ class LectureCamera extends GetView<LectureCameraController> {
                     )
                 ),
 
+                //AI Picture BOX
+                for(int i =0 ; i < controller.dataListCnt; i++)
+                  controller.predictorData(i)
+                ,
+                //loading bar center
+                controller.loadingChk == 1 ? const Center(
+                  child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Color(0xffd3d3d3))),
+                ) : const SizedBox.shrink()
               ]
           );
         }
