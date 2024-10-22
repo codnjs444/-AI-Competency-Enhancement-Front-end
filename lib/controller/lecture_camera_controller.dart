@@ -15,7 +15,7 @@ class LectureCameraController extends GetxController {
   late ScreenshotController screenshotController;
   //이미지 높이와 넓이
   late int widget_height = 0;//위젯 높이
-  late int widget_width = 0;//위젯 넓이
+  late int widget_width = 0;//위젯 넓이/
 
   @override
   void onInit() async{
